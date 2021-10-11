@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './imagegallery.css';
 import ImageGalleryItem from '../ImageGalleryItem/Imagegalleryitem';
 
-export default function ImageGallery() {
-  return (
-    <ul className="ImageGallery">
-      <ImageGalleryItem />
-    </ul>
-  );
+export default class ImageGallery extends Component {
+  render() {
+    return (
+      <ul className="ImageGallery">
+        <ImageGalleryItem imageName={this.props.imageName} />
+      </ul>
+    );
+  }
 }
