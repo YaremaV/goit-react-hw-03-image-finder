@@ -1,14 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './imagegallaryitem.css';
+import Modal from '../Modal/Modal';
 
-const ImageGalleryItem = ({ hits }) => (
-  <>
-    {hits?.map(({ id, tag, webformatURL, largeImageURL }) => (
-      <li key={id} className="ImageGalleryItem">
-        <img src={webformatURL} alt={tag} className="ImageGalleryItem-image" />
-      </li>
-    ))}
-  </>
-);
+export default class ImageGalleryItem extends Component {
+  state = {
+    showModal: false,
+  };
 
-export default ImageGalleryItem;
+  toggleModal = () => {
+    console.log('click');
+    this.setState(({ showModal }) => ({
+      showModal: !showModal,
+    }));
+  };
+
+  render() {
+    const { showModal } = this.state;
+    return (
+      <>
+        <li className="ImageGalleryItem">
+          <img
+            src={this.props.src}
+            alt={this.props.descr}
+            data-image={this.props.bigImg}
+            onClick={this.toggleModal}
+            className="ImageGalleryItem-image"
+          />
+        </li>
+
+        {showModal && (
+          <Modal onClose={this.toggleModal}>
+            <img src={this.props.bigImg} alt={this.props.descr} />
+          </Modal>
+        )}
+      </>
+    );
+  }
+}

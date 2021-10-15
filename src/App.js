@@ -10,14 +10,6 @@ export default class App extends Component {
     image: '',
   };
 
-  componentDidMount() {
-    console.log('App componentDidMount');
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    console.log('App componentDidUpdate');
-  }
-
   handleFormSubmit = image => {
     this.setState({ image });
   };
