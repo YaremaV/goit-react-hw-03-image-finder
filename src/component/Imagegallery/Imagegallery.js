@@ -4,6 +4,7 @@ import PhotoApiServer from '../api-server/api-server';
 import ImageGalleryItem from '../ImageGalleryItem/Imagegalleryitem';
 import Button from '../Button/Button';
 import InputMessage from '../InputMessage/InputMesage';
+import Error from '../Error/Error';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 import Loader from 'react-loader-spinner';
@@ -93,7 +94,7 @@ export default class ImageGallery extends Component {
       );
     }
     if (status === 'rejected') {
-      return <h2>{error.message}</h2>;
+      return <Error message={error.message} />;
     }
 
     if (status === 'resolved') {
