@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './imagegallery.css';
 import PhotoApiServer from '../api-server/api-server';
 import ImageGalleryItem from '../ImageGalleryItem/Imagegalleryitem';
@@ -6,7 +7,6 @@ import Button from '../Button/Button';
 import InputMessage from '../InputMessage/InputMesage';
 import Error from '../Error/Error';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-
 import Loader from 'react-loader-spinner';
 
 const photoApiServer = new PhotoApiServer();
@@ -67,7 +67,7 @@ export default class ImageGallery extends Component {
 
   addImage = () => {
     this.setState({ status: 'pending' });
-    this.updateImages('cat');
+    this.updateImages('');
   };
 
   // idle;
@@ -120,3 +120,7 @@ export default class ImageGallery extends Component {
     }
   }
 }
+
+ImageGallery.propType = {
+  onClick: PropTypes.func,
+};
