@@ -31,7 +31,7 @@ export default class ImageGalleryItem extends Component {
 
         {showModal && (
           <Modal onClose={this.toggleModal}>
-            <img src={this.props.bigImg} alt={this.props.descr} />
+            <img src={this.props.bigImg} alt={this.props.description} />
           </Modal>
         )}
       </>
