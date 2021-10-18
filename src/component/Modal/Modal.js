@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom/cjs/react-dom.development';
 import PropTypes from 'prop-types';
 import './modal.css';
 
-const modalContainer = document.querySelector('.modal-root');
+const modalRoot = document.querySelector('#modal-root');
 
 export default class Modal extends Component {
   componentDidMount() {
@@ -31,7 +31,7 @@ export default class Modal extends Component {
       <div className="Overlay" onClick={this.handleBackdropClick}>
         <div className="Modal">{this.props.children}</div>
       </div>,
-      modalContainer,
+      modalRoot,
     );
   }
 }
