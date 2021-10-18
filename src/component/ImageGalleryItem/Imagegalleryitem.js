@@ -22,7 +22,7 @@ export default class ImageGalleryItem extends Component {
         <li className="ImageGalleryItem">
           <img
             src={this.props.src}
-            alt={this.props.descr}
+            alt={this.props.description}
             data-image={this.props.bigImg}
             onClick={this.toggleModal}
             className="ImageGalleryItem-image"

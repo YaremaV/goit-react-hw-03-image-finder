@@ -107,7 +107,7 @@ export default class ImageGallery extends Component {
                   key={image.id}
                   src={image.webformatURL}
                   bigImg={image.largeImageURL}
-                  descr={image.tag}
+                  description={image.tag}
                   imageName={this.props.imageName}
                 />
               );
